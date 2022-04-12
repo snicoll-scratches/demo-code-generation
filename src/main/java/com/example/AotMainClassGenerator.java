@@ -24,7 +24,7 @@ public class AotMainClassGenerator {
 	private MethodSpec.Builder generateMainMethod(Class<?> applicationClass) {
 		CodeBlock.Builder code = CodeBlock.builder();
 		code.add("// Test\n");
-		code.add("$T.main(args)", applicationClass);
+		code.addStatement("$T.main(args)", applicationClass);
 
 		return MethodSpec.methodBuilder("main").addModifiers(Modifier.PUBLIC, Modifier.STATIC)
 				.addParameter(String[].class, "args")
